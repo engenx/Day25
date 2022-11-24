@@ -1,15 +1,20 @@
 import csv
 import pandas
 
-with open("weather_data.csv") as data_file:
-    data = csv.reader(data_file)
-    temperatures = []
-    print(data)
-    for row in data:
-        if row[1] != "temp":
-            temperatures.append(int(row[1]))
+data = pandas.read_csv("weather_data.csv")
+print(data["temp"])
 
-    print(temperatures)
+# print(data)
+
+# with open("weather_data.csv") as data_file:
+#     data = csv.reader(data_file)
+#     temperatures = []
+#     print(data)
+#     for row in data:
+#         if row[1] != "temp":
+#             temperatures.append(int(row[1]))
+#
+#     print(temperatures)
 
 # with open('weather_data.csv', 'r') as f_in, open('weather_data.txt', 'w') as f_out:
 #     # 2. Read the CSV file and store in variable
