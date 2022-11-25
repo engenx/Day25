@@ -2,7 +2,30 @@ import csv
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+# print(type(data))
+# print(type(data["temp"]))
+
+data_dict = data.to_dict()
+print(data_dict)
+
+temp_list = data["temp"].to_list()
+print(temp_list)
+total = 0
+avg = 0
+for each in temp_list:
+    total += each
+
+avg_temp = float("{:.2f}".format(total / len(temp_list)))
+print(avg_temp)
+
+avg = sum(temp_list) / len(temp_list)
+print(avg)
+
+print(data["temp"].mean())
+print(data["temp"].max())
+print(data["temp"].min())
+
+print(data["condition"])
 
 # print(data)
 
